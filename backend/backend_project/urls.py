@@ -15,8 +15,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include 
-from api.views import get_data #You import the views function from the api. 
+from django.urls import path, include  
+from api.views import get_data #You import the views function from the api.
+F
 
 #Path function definition: It creates a single, specific rule for routing a URL to a view via django 
 #Arguments; 1: the specific url address it is looking for. 2: The python code that will run when it finds that specific url address 
@@ -24,5 +25,9 @@ from api.views import get_data #You import the views function from the api.
 urlpatterns = [
     path('admin/', admin.site.urls),
     #Check if api is in the link. If it is redirect/passes the rest of the link to api/urls.py. Makes the code more organized
-    path('api/', include('api.urls')) 
+    path('api/', include('api.urls'))
+    path('api/data/', get_data)
 ]
+
+#tmrw add more in the path
+ 
